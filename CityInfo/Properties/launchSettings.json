@@ -10,7 +10,6 @@
   "profiles": {
     "CityInfo": {
       "commandName": "Project",
-      "launchBrowser": true,
       "applicationUrl": "https://localhost:7142;http://localhost:5034",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
@@ -19,7 +18,6 @@
 ***REMOVED***,
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
