@@ -12,15 +12,15 @@ public class ErrorModel : PageModel
     public ErrorModel(ILogger<ErrorModel> logger)
     {
         _logger = logger;
-***REMOVED***
+    }
 
-    public string? RequestId { get; set;***REMOVED***
+    public string? RequestId { get; set; }
 
     public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 
     public void OnGet()
     {
         RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
-***REMOVED***
+    }
 }
 

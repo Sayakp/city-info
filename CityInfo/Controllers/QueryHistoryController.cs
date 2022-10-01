@@ -19,14 +19,14 @@ namespace CityInfo.Controllers
         public QueryHistoryController(DataContext context)
         {
             _context = context;
-    ***REMOVED***
+        }
 
         [HttpGet]
         public async Task<ActionResult<List<QueryDto>>> GetQueryHistory()
         {
             var queries = await _context.QueryHistory.ToListAsync();
             return Ok(queries);
-    ***REMOVED***
-***REMOVED***
+        }
+    }
 }
 

@@ -12,7 +12,7 @@ namespace CityInfo.Services
         public CityInfoService(IConfiguration configuration)
         {
             _configuration = configuration;
-    ***REMOVED***
+        }
 
         public async Task<WeatherDto> GetWeather(string cityName)
         {
@@ -26,9 +26,9 @@ namespace CityInfo.Services
             if (weatherResponse.IsSuccessStatusCode)
             {
                 weather = await weatherResponse.Content.ReadAsAsync<WeatherDto>();
-        ***REMOVED***
+            }
             return weather;
-    ***REMOVED***
+        }
 
         public async Task<ArticlesResult> GetNews(string cityName)
         {
@@ -39,10 +39,10 @@ namespace CityInfo.Services
                 SortBy = SortBys.Relevancy,
                 Language = Languages.EN,
                 From = DateTime.Today.AddDays(-2)
-        ***REMOVED***;
+            };
             ArticlesResult result = await client.GetEverythingAsync(query);
             return result;
-    ***REMOVED***
-***REMOVED***
+        }
+    }
 }
 

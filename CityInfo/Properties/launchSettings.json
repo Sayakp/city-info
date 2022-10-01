@@ -5,8 +5,8 @@
     "iisExpress": {
       "applicationUrl": "http://localhost:34901",
       "sslPort": 44335
-***REMOVED***
-***REMOVED***
+    }
+  },
   "profiles": {
     "CityInfo": {
       "commandName": "Project",
@@ -14,14 +14,14 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
-  ***REMOVED***
-***REMOVED***,
+      }
+    },
     "IIS Express": {
       "commandName": "IISExpress",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
+      }
+    }
+  }
 }

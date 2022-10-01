@@ -8,7 +8,7 @@ namespace CityInfo.Contexts
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-    ***REMOVED***
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -19,14 +19,14 @@ namespace CityInfo.Contexts
                         Id = 1,
                         City = "Medellin",
                         QueryTime = DateTime.Now
-                ***REMOVED***
+                    }
                 );
 
             base.OnModelCreating(modelBuilder);
-    ***REMOVED***
+        }
 
-        public DbSet<QueryDto> QueryHistory { get; set;***REMOVED***
+        public DbSet<QueryDto> QueryHistory { get; set; }
 
-***REMOVED***
+    }
 }
 

@@ -19,7 +19,7 @@ namespace CityInfo.Controllers
         public CityController(ICityInfoService cityInfoService, DataContext context){
             _cityInfoService = cityInfoService;
             _context = context;
-    ***REMOVED***
+        }
 
         
         [HttpGet("{cityName}")]
@@ -28,7 +28,7 @@ namespace CityInfo.Controllers
             QueryDto newQuery = new QueryDto {
                 City = cityName,
                 QueryTime = DateTime.Now,
-        ***REMOVED***;
+            };
 
             Console.WriteLine(newQuery.City);
             Console.WriteLine(newQuery.QueryTime);
@@ -44,11 +44,11 @@ namespace CityInfo.Controllers
                 news = articles,
                 city = cityName,
                 weatherInfo = weather
-        ***REMOVED***;
+            };
 
          
             return Ok(cityInfo);
-    ***REMOVED***
-***REMOVED***
+        }
+    }
 }
 
