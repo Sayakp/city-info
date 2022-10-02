@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import { CityQuery } from "../types";
 
 const useHistory = () => {
-  const [history, setHistory] = useState(null);
+  const [history, setHistory] = useState<CityQuery[]>([]);
 
   useEffect(() => {
     axios
-      .get("/api/queries")
+      .get<CityQuery[]>("/api/queries")
       .then((response) => {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         setHistory(response.data);
       })
       .catch((error) => {
-        setHistory(null);
         console.log(error);
       });
   }, []);
