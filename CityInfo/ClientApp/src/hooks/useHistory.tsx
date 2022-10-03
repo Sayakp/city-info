@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { CityQuery } from "../types";
+import { ICityQuery } from "../types";
 
 const useHistory = () => {
-  const [history, setHistory] = useState<CityQuery[]>([]);
+  const [history, setHistory] = useState<ICityQuery[]>([]);
 
   useEffect(() => {
     axios
-      .get<CityQuery[]>("/api/queries")
+      .get<ICityQuery[]>("/api/queries")
       .then((response) => {
         setHistory(response.data);
       })

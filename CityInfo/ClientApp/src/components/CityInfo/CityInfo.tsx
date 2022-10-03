@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import Grid from "@mui/material/Grid";
+import SearchForm from "./SearchForm";
+import SearchResults from "./SearchResults";
+import { Container } from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 const CityInfo = () => {
-  return <div>City Info</div>;
+  const [cityQuery, setCityQuery] = useState<string>("");
+
+  return (
+    <Container>
+      <SearchForm setCityQuery={setCityQuery} />
+      {cityQuery !== "" ? (
+        <SearchResults cityQuery={cityQuery} />
+      ) : (
+        <Typography>Search for city news and weather</Typography>
+      )}
+    </Container>
+  );
 };
 
 export default CityInfo;
