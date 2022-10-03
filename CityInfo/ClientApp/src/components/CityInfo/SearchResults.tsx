@@ -17,12 +17,10 @@ const SearchResults = ({ cityQuery }: ISearchResultsProps) => {
         <LinearProgress />
       ) : (
         <>
-          {
-            <WeatherView
-              weather={cityInfo.results.weatherInfo}
-              city={cityInfo.results.city}
-            />
-          }
+          <WeatherView
+            weather={cityInfo.results.weatherInfo}
+            city={cityInfo.results.city}
+          />
           <NewsView news={cityInfo.results.news} city={cityInfo.results.city} />
         </>
       )}
