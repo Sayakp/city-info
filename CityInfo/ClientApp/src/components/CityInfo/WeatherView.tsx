@@ -1,12 +1,7 @@
-import ExpandMoreSharp from "@mui/icons-material/ExpandMoreSharp";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
 import React from "react";
 import Typography from "@mui/material/Typography";
 import { IWeatherInfo, IWeather, IWeatherMain } from "../../types";
-import AccordionDetails from "@mui/material/AccordionDetails";
 import Card from "@mui/material/Card";
-import CardActionArea from "@mui/material/CardActionArea";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import ThermostatAutoSharpIcon from "@mui/icons-material/ThermostatAutoSharp";
@@ -27,7 +22,7 @@ const WeatherView = ({ weather, city }: WeatherViewProps) => {
       <CardMedia
         component="img"
         sx={{ width: 150 }}
-        image={`http://openweathermap.org/img/wn/${weatherEntry.icon}@2x.png`}
+        image={`https://openweathermap.org/img/wn/${weatherEntry.icon}@2x.png`}
       />
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <CardContent sx={{ flex: "1 0 auto" }}>
@@ -52,9 +47,19 @@ const WeatherView = ({ weather, city }: WeatherViewProps) => {
 
   return (
     <>
-      <Typography>Weather in {city}</Typography>
-      {weather.weather.map((weatherEntry, index) =>
-        weatherInfo(weatherEntry, weather.main, index)
+      {weather.cod === 0 ? (
+        <Typography align="center" variant="h5">
+          No weather results found for {city}
+        </Typography>
+      ) : (
+        <>
+          <Typography align="center" variant="h5">
+            Weather in {city}
+          </Typography>
+          {weather.weather.map((weatherEntry, index) =>
+            weatherInfo(weatherEntry, weather.main, index)
+          )}
+        </>
       )}
     </>
   );

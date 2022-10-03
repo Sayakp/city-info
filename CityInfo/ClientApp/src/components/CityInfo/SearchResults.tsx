@@ -1,9 +1,8 @@
 import React from "react";
 import useCityInfo from "../../hooks/useCityInfo";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import WeatherView from "./WeatherView";
 import NewsView from "./NewsView";
+import LinearProgress from "@mui/material/LinearProgress";
 
 interface ISearchResultsProps {
   cityQuery: string;
@@ -15,13 +14,15 @@ const SearchResults = ({ cityQuery }: ISearchResultsProps) => {
   return (
     <>
       {cityInfo.results === null ? (
-        <Typography>Loading results</Typography>
+        <LinearProgress />
       ) : (
         <>
-          <WeatherView
-            weather={cityInfo.results.weatherInfo}
-            city={cityInfo.results.city}
-          />
+          {
+            <WeatherView
+              weather={cityInfo.results.weatherInfo}
+              city={cityInfo.results.city}
+            />
+          }
           <NewsView news={cityInfo.results.news} city={cityInfo.results.city} />
         </>
       )}

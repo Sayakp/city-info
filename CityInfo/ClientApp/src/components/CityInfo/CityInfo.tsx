@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Grid from "@mui/material/Grid";
 import SearchForm from "./SearchForm";
 import SearchResults from "./SearchResults";
 import { Container } from "@mui/material";
@@ -14,7 +13,9 @@ const CityInfo = () => {
       {cityQuery !== "" ? (
         <SearchResults cityQuery={cityQuery} />
       ) : (
-        <Typography>Search for city news and weather</Typography>
+        <Typography align="center" variant="h5">
+          Search for city news and weather
+        </Typography>
       )}
     </Container>
   );

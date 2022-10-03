@@ -30,10 +30,6 @@ namespace CityInfo.Controllers
                 QueryTime = DateTime.Now,
             };
 
-            Console.WriteLine(newQuery.City);
-            Console.WriteLine(newQuery.QueryTime);
-            Console.WriteLine(newQuery);
-
             _context.QueryHistory.Add(newQuery);
             await _context.SaveChangesAsync();
 

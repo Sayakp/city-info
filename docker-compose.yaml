@@ -1,0 +1,16 @@
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      MSSQL_SA_PASSWORD: "dev_pwd123*"
+      ACCEPT_EULA: "Y"
+  app:
+    build: .
+    ports:
+      - 15689:80
+    depends_on:
+      - db
+    environment:
+      "WeatherApiKey": ""
+      "NewsApiKey": ""
+      "ConnectionStrings__DefaultConnection": "Server=db,1433;Database=cityQueries;User Id=sa;Password=dev_pwd123*;Trusted_Connection=False;"
