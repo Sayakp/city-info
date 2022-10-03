@@ -16,7 +16,7 @@ const SearchHistory = () => {
           Search History
         </Typography>
         <List dense={true}>
-          {history.map((query, index) => (
+          {[...history].reverse().map((query, index) => (
             <ListItem key={`hls_${query.id}`}>
               <ListItemText
                 primary={`${query.city}`}
